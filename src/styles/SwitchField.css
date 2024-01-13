@@ -1,0 +1,9 @@
+.switch-container {
+  display: flex;
+  align-items: center;
+  margin: 1.6rem 0;
+}
+
+.switch-container input[type="checkbox"] {
+  margin-right: 5px; /* Adjust spacing as needed */
+}

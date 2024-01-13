@@ -1,0 +1,17 @@
+.select__field__wrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select__field__wrapper > * {
+  flex: 1;
+}
+
+.select {
+  background-color: #f0f7ff;
+  width: 100%;
+  border: 1px solid #ededed;
+  padding: 1rem 1rem;
+}

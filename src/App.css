@@ -1,0 +1,52 @@
+@import "./styles/index.css";
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > * {
+  flex: 1;
+}
+
+.json__editor {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.form__view {
+  background: #f2f2f2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rendered__form {
+  max-width: 60rem;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+}
+
+.input__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcfdff;
+  border: 1px solid #f0f0f0;
+  padding: 1.4rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.input {
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border: 1px solid #ededed;
+  border-radius: 0.5rem;
+  max-width: 20rem;
+  width: 100%;
+}

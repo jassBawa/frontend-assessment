@@ -1,20 +1,19 @@
 import JSONInput from "react-json-editor-ajrm";
+import locale from "react-json-editor-ajrm/locale/en";
+import usePizzaStore from "../store/usePizzaStore";
 
-const JsonEditor = ({ jsonData, onChange }) => {
+const JsonEditor = () => {
   const handleJsonChange = ({ jsObject }) => {
-    console.log(jsObject);
-    // if (!jsObject) return;
-
-    onChange(jsObject);
+    setJsonData(jsObject);
   };
+  const { jsonData, setJsonData } = usePizzaStore();
 
   return (
     <JSONInput
-      id="a_unique_id"
+      id="json_editor"
       placeholder={jsonData}
       onBlur={handleJsonChange}
-      // colors={"darktheme"}
-      // locale      = { locale }
+      locale={locale}
       height="100%"
       width="100%"
     />

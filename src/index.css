@@ -23,22 +23,3 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
-
-.group__divider {
-  margin: 1rem 0 2rem 0;
-  height: 1px;
-  background-color: #ededed;
-  border: 0;
-}
-
-.groupField__wrapper {
-  margin-top: 2rem;
-  background-color: #fcfdff;
-  border: 1px solid #f0f0f0;
-  border-radius: 0.5rem;
-  padding: 2rem;
-}
-
-.overflow-scroll {
-  overflow: scroll;
-}

@@ -17,10 +17,11 @@ main > * {
 
 .form__view {
   background: #f2f2f2;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  padding: 2rem 0;
 }
 
 .rendered__form {
@@ -28,25 +29,43 @@ main > * {
   width: 100%;
   background-color: #ffffff;
   color: #000;
+  height: 100%;
+  overflow: scroll;
   padding: 2rem 3rem;
   border-radius: 0.5rem;
 }
 
-.input__field {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fcfdff;
-  border: 1px solid #f0f0f0;
-  padding: 1.4rem 2rem;
-  border-radius: 0.5rem;
+.rendered__form::-webkit-scrollbar {
+  display: none;
 }
 
-.input {
-  background-color: #f0f7ff;
-  padding: 1rem;
-  border: 1px solid #ededed;
-  border-radius: 0.5rem;
-  max-width: 20rem;
-  width: 100%;
+.form__action__container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.form__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.4rem;
+  background-color: #333;
+  color: white;
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn--outline {
+  color: #333;
+  border: 1px solid #333;
+  background-color: transparent;
 }

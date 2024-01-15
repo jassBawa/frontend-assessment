@@ -1,0 +1,23 @@
+.input__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcfdff;
+}
+
+.input__field > * {
+  flex: 1;
+}
+
+.input {
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border: 1px solid #ededed;
+  border-radius: 0.5rem;
+
+  width: 100%;
+}
+
+.input__label {
+  font-weight: 500;
+}

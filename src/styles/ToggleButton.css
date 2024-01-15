@@ -1,12 +1,9 @@
-/* Genel stil */
 .toggle-switch {
   position: relative;
   display: inline-block;
   width: 30px;
   height: 16px;
 }
-
-/* static */
 .toggle-switch .toggle-input {
   display: none;
 }
@@ -36,7 +33,6 @@
   transition: transform 0.3s;
 }
 
-/* toggled state */
 .toggle-switch .toggle-input:checked + .toggle-label {
   background-color: #4f46e5;
 }

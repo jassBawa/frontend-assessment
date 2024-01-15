@@ -1,14 +1,16 @@
-import React from "react";
-
-const ToggleButton = ({ checked, onChange, field, ...props }) => {
-  console.log(field);
+const ToggleButton = ({ id, checked, onChange }) => {
   return (
-    <>
-      <div className="toggle-switch">
-        <input className="toggle-input" id="toggle" type="checkbox" />
-        <label className="toggle-label" htmlFor="toggle"></label>
-      </div>
-    </>
+    <div className="toggle-switch">
+      <input
+        className="toggle-input"
+        id={id}
+        type="checkbox"
+        value={checked}
+        onChange={onChange}
+      />
+
+      <label className="toggle-label" htmlFor={id}></label>
+    </div>
   );
 };
 

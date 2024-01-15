@@ -1,0 +1,16 @@
+.items-center {
+  display: flex;
+  align-items: center;
+}
+
+.ml-xs {
+  margin-left: 0.6rem;
+}
+
+.mb-1 {
+  margin-bottom: 1.4rem;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}

@@ -1,27 +1,28 @@
 import "./App.css";
-import UiField from "./components/UiField";
-import data from "./data/pizza.json";
 import JsonEditor from "./components/JsonEditor";
-import { useState } from "react";
+import UiField from "./components/UiField";
+import usePizzaStore from "./store/usePizzaStore";
 
 function App() {
-  const [jsonData, setJsonData] = useState(data);
-
-  const handleJsonChange = (newJson) => {
-    setJsonData(newJson);
-  };
+  const { jsonData } = usePizzaStore();
 
   return (
     <>
       <main>
         <div className="json__editor">
-          <JsonEditor jsonData={jsonData} onChange={handleJsonChange} />
+          <JsonEditor />
         </div>
         <div className="form__view">
           <form action="" className="rendered__form">
             {jsonData.map((field, index) => (
               <UiField key={index} field={field} />
             ))}
+            <div className="form__action__container">
+              <div className="form__buttons">
+                <button className="btn btn--outline">Cancel</button>
+                <button className="btn">Submit</button>
+              </div>
+            </div>
           </form>
         </div>
       </main>

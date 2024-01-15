@@ -1,23 +1,38 @@
+import { useEffect, useState } from "react";
 import GroupField from "./GroupField";
-import InputField from "./InputField";
-import RadioField from "./RadioField";
-import SelectField from "./SelectField";
-import SwitchField from "./SwitchField";
+import IgnoreField from "./IgnoreField";
+import InputField from "./Inputs/InputField";
+import RadioField from "./Inputs/RadioField";
+import SelectField from "./Inputs/SelectField";
+import SwitchField from "./Inputs/SwitchField";
+import ToggleButton from "./ToggleButton";
+import SpecialComponent from "./SpecialComponent";
 
-const UiField = ({ field }) => {
-  console.log(field);
-  switch (field.uiType) {
-    case "Input":
-      return <InputField field={field} />;
-    case "Group":
-      return <GroupField field={field} />;
-    case "Radio":
-      return <RadioField field={field} />;
-    case "Select":
-      return <SelectField field={field} />;
-    case "Switch":
-      return <SwitchField field={field} />;
-    default:
+const componentMap = {
+  Input: InputField,
+  Group: GroupField,
+  Radio: RadioField,
+  Select: SelectField,
+  Ignore: IgnoreField,
+  Switch: SwitchField,
+};
+
+const UiField = ({ field, showNonEssential }) => {
+  const Component = componentMap[field.uiType];
+
+  if (!Component) {
+    return null;
   }
+
+  if (
+    (field.validate.required === false ||
+      field.validate.required === undefined) &&
+    !showNonEssential
+  ) {
+    // Return your special component for non-required fields
+    return <SpecialComponent field={field} />;
+  }
+
+  return <Component field={field} />;
 };
 export default UiField;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Tooltip from "../Tooltip";
 
 const SelectField = ({ field }) => {
   // TODO: handle onchange
@@ -17,8 +18,9 @@ const SelectField = ({ field }) => {
         isParent ? "groupField__wrapper" : ""
       }`}
     >
-      <label className="select__label" htmlFor={field.jsonKey}>
+      <label className="input__label" htmlFor={field.jsonKey}>
         {label}
+        {field.validate.required && <span style={{ color: "red" }}>*</span>}
       </label>
       <select className="select" id={field.jsonKey}>
         {options.map((option) => (

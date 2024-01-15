@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const SwitchField = ({ field }) => {
   const { label } = field;
@@ -10,13 +10,7 @@ const SwitchField = ({ field }) => {
 
   return (
     <div className="switch-container">
-      <input
-        type="checkbox"
-        // checked={checked}
-        onChange={handleChange}
-        // {...otherProps}
-        checked={isChecked}
-      />
+      <input type="checkbox" onChange={handleChange} checked={isChecked} />
       <label htmlFor={field}>{label}</label>
     </div>
   );

@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import useTabStore from "../../store/tabStore";
 
 const RadioField = ({ field }) => {
   const {
     validate: { options },
   } = field;
 
-  const [selectedTab, setSelectedTab] = useState(field.validate.defaultValue);
+  const selectedTab = useTabStore((state) => state.selectedTab);
+  const setSelectedTab = useTabStore((state) => state.setSelectedTab);
 
   const handleTabChange = (value) => {
     setSelectedTab(value);
   };
+
+  useEffect(() => {
+    setSelectedTab(field.validate.defaultValue);
+  }, [field.validate.defaultValue, setSelectedTab]);
 
   return (
     <>
@@ -25,21 +31,6 @@ const RadioField = ({ field }) => {
             {option.label}
           </div>
         ))}
-      </div>
-      <div className="tab__content-container">
-        {/* TODO: how to do this  */}
-        {/* {options.map((option) => {
-          return (
-            <div
-              key={option.value}
-              className={`tab-content ${
-                selectedTab === option.value ? "active" : ""
-              }`}
-            >
-              Content for {option.label}
-            </div>
-          );
-        })} */}
       </div>
     </>
   );

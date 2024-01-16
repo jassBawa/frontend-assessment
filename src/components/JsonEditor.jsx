@@ -3,10 +3,11 @@ import locale from "react-json-editor-ajrm/locale/en";
 import usePizzaStore from "../store/usePizzaStore";
 
 const JsonEditor = () => {
+  const { jsonData, setJsonData } = usePizzaStore();
+
   const handleJsonChange = ({ jsObject }) => {
     setJsonData(jsObject);
   };
-  const { jsonData, setJsonData } = usePizzaStore();
 
   return (
     <JSONInput

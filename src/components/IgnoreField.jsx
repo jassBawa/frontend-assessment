@@ -1,9 +1,9 @@
+import usePizzaStore from "../store/usePizzaStore";
 import UiField from "./UiField";
-import useTabStore from "../store/tabStore";
 
 const IgnoreField = ({ field }) => {
   // Get the selected radio tab from local storage
-  const selectedTab = useTabStore((state) => state.selectedTab);
+  const selectedTab = usePizzaStore((state) => state.selectedTab);
 
   // Check if the current IgnoreField should be displayed based on the selected tab
   const shouldDisplay = field.conditions.some(

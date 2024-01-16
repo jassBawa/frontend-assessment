@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import GroupField from "./GroupField";
 import IgnoreField from "./IgnoreField";
 import InputField from "./Inputs/InputField";

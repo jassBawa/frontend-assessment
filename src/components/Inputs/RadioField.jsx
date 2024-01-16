@@ -1,16 +1,16 @@
 import { useEffect } from "react";
-import useTabStore from "../../store/tabStore";
+import usePizzaStore from "../../store/usePizzaStore";
 
 const RadioField = ({ field }) => {
   const {
     validate: { options },
   } = field;
 
-  const selectedTab = useTabStore((state) => state.selectedTab);
-  const setSelectedTab = useTabStore((state) => state.setSelectedTab);
+  const { selectedTab, setSelectedTab, updateFormField } = usePizzaStore();
 
   const handleTabChange = (value) => {
     setSelectedTab(value);
+    updateFormField(field.jsonKey, value);
   };
 
   useEffect(() => {

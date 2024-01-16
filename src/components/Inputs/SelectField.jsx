@@ -1,16 +1,18 @@
-import { useState } from "react";
-import Tooltip from "../Tooltip";
+import usePizzaStore from "../../store/usePizzaStore";
 
 const SelectField = ({ field }) => {
   // TODO: handle onchange
-  const [selectedOption, setSelectedOption] = useState();
-
+  const { updateFormField } = usePizzaStore();
   const isParent = field.level === 0;
 
   const {
     label,
     validate: { options },
   } = field;
+
+  const handleChange = (event) => {
+    updateFormField(field.jsonKey, event.target.value);
+  };
 
   return (
     <div
@@ -22,7 +24,7 @@ const SelectField = ({ field }) => {
         {label}
         {field.validate.required && <span style={{ color: "red" }}>*</span>}
       </label>
-      <select className="select" id={field.jsonKey}>
+      <select className="select" id={field.jsonKey} onChange={handleChange}>
         {options.map((option) => (
           <option
             className="select__option"

@@ -9,5 +9,6 @@
 @import "./tooltip.css";
 
 /* shared */
-
 @import "./shared.css";
+
+@import "./Modal.css";
